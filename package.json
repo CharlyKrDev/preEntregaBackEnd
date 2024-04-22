@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "express": "^4.19.2",
     "npm": "^10.5.2",
@@ -13,5 +14,6 @@
   "keywords": [],
   "author": "CharlyKrDev",
   "license": "ISC",
-  "description": "primerapreentregabackend_kaar_carlos"
+  "description": "primerapreentregabackend_kaar_carlos",
+  "devDependencies": {}
 }
