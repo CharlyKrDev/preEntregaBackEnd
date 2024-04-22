@@ -19,30 +19,20 @@ export class ProductManager {
     async readProducts() {
         try {
             const data = await fs.readFile(this.path, "utf-8");
-            this.products = JSON.parse(data);
+            this.products = data ? JSON.parse(data) : [];
         } catch (error) {
             if (error.code !== "ENOENT") {
                 throw error;
             }
             this.products = [];
         }
-    }
+    } 
     async addProduct(newProduct) {
-        const { title, description, price, thumbnail, code, stock } = newProduct;
+        const { title, description, code, price, status, stock, category, thumbnail =[]} = newProduct;
         try {
             await this.readProducts();
-            const codigoRegistrado = this.products.some(
-                (product) => product.code === code
-            );
-            if (!(title && description && price && thumbnail && code && stock)) {
-                console.log("Todos los campos son obligatorios");
-                return;
-            }
-
-            if (codigoRegistrado) {
-                console.log(`El código ya está registrado`);
-                return;
-            }
+            if (!thumbnail) newProduct.thumbnail = [];
+            if(status ===undefined) newProduct.status = true;
             const lastId =
                 this.products.length > 0
                     ? this.products[this.products.length - 1].id
@@ -119,20 +109,31 @@ export class ProductManager {
     async deleteProduct(productId) {
         try {
             await this.readProducts();
-            const encontrarProducto = this.products.findIndex(product => product.id === productId);
-            if (encontrarProducto !== -1) {
-                this.products.splice(encontrarProducto, 1);
+            const index = this.products.findIndex(product => product.id === productId);
+            if (index !== -1) {
+                this.products.splice(index, 1);
                 await fs.writeFile(this.path, JSON.stringify(this.products, null, 2));
                 console.log("Producto eliminado correctamente");
-                return true;
+                return { success: true, message: "Producto eliminado correctamente" };
             } else {
-                console.log("Producto buscado no ha sido encontrado, recuerde que se busca por ID")
-
-
+                console.log("Producto no encontrado");
+                return { success: false, message: "Producto no encontrado" };
             }
-
         } catch (error) {
-            console.error(`Error al acceder al archivo`, error);
+            console.error("Error al eliminar el producto:", error);
+            return { success: false, message: "Error al eliminar el producto" };
         }
     }
+    
+    async checkProductCode(code) {
+        await this.readProducts();
+        return this.products.some(product => product.code === code);
+    }
+
+    async checkProductId(id){
+
+        await this.readProducts();
+        return this.products.some(product => product.id === id);
+    }
+
 }
