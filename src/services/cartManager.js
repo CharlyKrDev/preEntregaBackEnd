@@ -84,30 +84,34 @@ export class CartManager {
 
     try {
       await this.readCart();
-      await this.readProducts()
+      await this.readProducts();
       const cartIndex = this.carts.findIndex((cart) => cart.id === cartId);
       if (cartIndex === -1) {
-          console.log(`El carrito con ID ${cartId} no existe.`);
-          return;
-      } 
-      const productIndex = this.products.findIndex((product) => product.id === prodId);
+        console.log(`El carrito con ID ${cartId} no existe.`);
+        return;
+      }
+      const productIndex = this.products.findIndex(
+        (product) => product.id === prodId
+      );
       if (productIndex === -1) {
-          console.log(`El producto con ID ${prodId} no existe.`);
-          return;
+        console.log(`El producto con ID ${prodId} no existe.`);
+        return;
       }
 
       const { id } = this.products[productIndex];
-      const { quantity } = this.carts[cartIndex].products.find((cart) => cart.id === id) || { quantity: 0 };
+      const { quantity } = this.carts[cartIndex].products.find(
+        (cart) => cart.id === id
+      ) || { quantity: 0 };
       if (quantity === 0) {
         this.carts[cartIndex].products.push({ id, quantity: 1 });
-    } else {
-        this.carts[cartIndex].products.find((cart) => cart.id === id).quantity++;
-    }
+      } else {
+        this.carts[cartIndex].products.find((cart) => cart.id === id)
+          .quantity++;
+      }
 
-    this.writeCart();
-    console.log(`El producto ha sido agregado correctamente`);
-
-        }catch (error) {
+      this.writeCart();
+      console.log(`El producto ha sido agregado correctamente`);
+    } catch (error) {
       console.error(`Problemas al agregar el producto al carrito`, error);
     }
   }
@@ -122,4 +126,3 @@ export class CartManager {
     return this.products.some((product) => product.id === id);
   }
 }
-
