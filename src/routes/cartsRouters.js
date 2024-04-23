@@ -24,7 +24,7 @@ cartsRouter.post("/api/carts", async (req, res) => {
 
     res
       .status(201)
-      .json({ Carrito: cartEmpty, message: `Creado correctamente` });
+      .json({message: `Carrito creado correctamente` });
   } catch (error) {
     res.status(500).json(`Error al obtener cargar producto en carrito`, error);
   }

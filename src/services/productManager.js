@@ -40,7 +40,6 @@ export class ProductManager {
     } = newProduct;
     try {
       await this.readProducts();
-      if (!thumbnail) newProduct.thumbnail = [];
       if (status === undefined) newProduct.status = true;
       const lastId =
         this.products.length > 0
