@@ -9,7 +9,7 @@
 
 ## El proyecto consiste en el desarrollo de un eCommerce con su sistema CRUD desde el BackEnd, siendo el entorno de desarrollo Node JS.
 
-### Las dependencias que estamos utilizando son :
+### Algunas de las dependencias utilizadas son :
 
 
 ![image](https://github.com/CharlyKrDev/preEntregaBackEnd-Kaar-Carlos/assets/123911937/01c463a3-6505-4705-b9c1-5496c73c5afb)
