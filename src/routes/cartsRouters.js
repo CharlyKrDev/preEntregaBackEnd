@@ -38,17 +38,16 @@ cartsRouter.post("/api/carts/:cid/products/:pid", async (req, res) => {
     const checkId = await cartsManager.checkProductId(prodId);
     const checkIdCart = await cartsManager.checkCartId(cartId);
 
-    console.log(checkId);
 
     if (!checkId) {
       return res
         .status(400)
-        .json(`Debe seleccionar un id de producto existente`);
+        .json(`Debe seleccionar el id de producto existente`);
     }
     if (!checkIdCart) {
       return res
         .status(400)
-        .json(`Debe seleccionar un id de un carrito existente`);
+        .json(`Debe seleccionar el id de un carrito existente`);
     }
     const addToCart = cartsManager.addProductToCart(cartId, prodId);
 
