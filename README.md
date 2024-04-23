@@ -54,8 +54,22 @@ import cartsRouter from "./routes/cartsRouters.js";
 
 ![image](https://github.com/CharlyKrDev/preEntregaBackEnd-Kaar-Carlos/assets/123911937/09c59868-9ebe-4792-8060-6cbcfb74cb1b)
 
+## PostMan
+  ![image](https://github.com/CharlyKrDev/preEntregaBackEnd-Kaar-Carlos/assets/123911937/3baf9a71-0c7a-47f0-951a-e7dc7b8073b1)
 
-## Class 
+### Con Postman puedo interactuar con mi servidor de una forma más dinámica, lo que me permite testear de manera más eficiente si los distintos métodos del sistema CRUD están funcionando correctamente. Como se aprecia en la siguiente imagen, podemos ver cómo Postman notifica la creación del producto de forma correcta, nos indica cuál es y también el estado de la gestión, entre otras cosas.
+
+  ![image](https://github.com/CharlyKrDev/preEntregaBackEnd-Kaar-Carlos/assets/123911937/8e812ee3-cdbb-4227-9e74-d7251d78c742)
+
+  
+## Multer 
+ ![image](https://github.com/CharlyKrDev/preEntregaBackEnd-Kaar-Carlos/assets/123911937/6c8c645b-53fb-4521-8637-df8c862337af)
+
+
+  ### Multer es un middleware de node.js para manejar multipart/form-data, que se utiliza principalmente para cargar archivos. 
+  
+
+## Class de JavaScript
 
 ```javascript
 import fs from "fs/promises";
@@ -106,11 +120,6 @@ export class CartManager {
     res.status(500).json(`Error al obtener cargar producto en carrito`, error);
   }
   ```
-  ## Multer 
- ![image](https://github.com/CharlyKrDev/preEntregaBackEnd-Kaar-Carlos/assets/123911937/6c8c645b-53fb-4521-8637-df8c862337af)
-
-
-  ### Multer es un middleware de node.js para manejar multipart/form-data, que se utiliza principalmente para cargar archivos. 
 
   El proyecto actualmente esta en desarrollo.
 
