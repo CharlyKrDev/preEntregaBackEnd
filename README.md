@@ -4,16 +4,19 @@
 
 ## por Carlos Kaar
 
-![alt text](image-4.png)
+![image](https://github.com/CharlyKrDev/preEntregaBackEnd-Kaar-Carlos/assets/123911937/8d8d3140-c4f7-4dd9-aaab-2e4e713bba7f)
+
 
 ## El proyecto consiste en el desarrollo de un eCommerce con su sistema CRUD desde el BackEnd, siendo el entorno de desarrollo Node JS.
 
 ### Las dependencias que estamos utilizando son :
 
 
-![alt text](image.png)
+![image](https://github.com/CharlyKrDev/preEntregaBackEnd-Kaar-Carlos/assets/123911937/01c463a3-6505-4705-b9c1-5496c73c5afb)
 
-![alt text](image-1.png)
+
+![image](https://github.com/CharlyKrDev/preEntregaBackEnd-Kaar-Carlos/assets/123911937/07278a36-c097-41b3-b9b5-93816e4f50db)
+
 
 
 ```javascript
@@ -46,9 +49,11 @@ import productsRouter from "./routes/productsRouters.js";
 import cartsRouter from "./routes/cartsRouters.js";
 ```
 
-![alt text](image-3.png)
+![image](https://github.com/CharlyKrDev/preEntregaBackEnd-Kaar-Carlos/assets/123911937/d87ac187-abed-4443-b617-0be5d4067c2b)
 
-![alt text](image-6.png)
+
+![image](https://github.com/CharlyKrDev/preEntregaBackEnd-Kaar-Carlos/assets/123911937/09c59868-9ebe-4792-8060-6cbcfb74cb1b)
+
 
 ## Class 
 
@@ -102,7 +107,8 @@ export class CartManager {
   }
   ```
   ## Multer 
-  ![alt text](image-10.png)
+ ![image](https://github.com/CharlyKrDev/preEntregaBackEnd-Kaar-Carlos/assets/123911937/6c8c645b-53fb-4521-8637-df8c862337af)
+
 
   ### Multer es un middleware de node.js para manejar multipart/form-data, que se utiliza principalmente para cargar archivos. 
 
@@ -110,4 +116,4 @@ export class CartManager {
 
  ### Gracias por tu tiempo!
 
-![alt text](image-9.png)
+![image](https://github.com/CharlyKrDev/preEntregaBackEnd-Kaar-Carlos/assets/123911937/d08aafc7-0a03-446c-9fef-01376cb77bc5)
