@@ -52,11 +52,9 @@ cartsRouter.post("/api/carts/:cid/products/:pid", async (req, res) => {
     }
     const addToCart = cartsManager.addProductToCart(cartId, prodId);
 
-    res
-      .status(201)
-      .json({
-        message: `Agregado producto id: ${prodId} al carrito id: ${cartId}`,
-      });
+    res.status(201).json({
+      message: `Agregado producto id: ${prodId} al carrito id: ${cartId}`,
+    });
   } catch (error) {
     res.status(500).json(`Error al obtener cargar producto en carrito`, error);
   }
